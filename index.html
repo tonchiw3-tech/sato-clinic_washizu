@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>佐藤医院 | 地域に根ざした医療</title>
+  <meta name="description" content="佐藤医院は、内科・循環器科・呼吸器内科・予防接種・健康診断を通じて地域の皆さまの健康を支えます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="佐藤医院 トップへ">
+        <img src="./assets/Logo/logo.png" alt="佐藤医院 Sato Clinic">
+      </a>
+      <nav class="global-nav" aria-label="メインナビゲーション">
+        <a href="#top">トップ</a>
+        <a href="#medical">診療案内</a>
+        <a href="#about">当院について</a>
+        <a href="#staff">スタッフ紹介</a>
+        <a href="#access">アクセス</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="佐藤医院メインビジュアル">
+      <img src="./assets/hero/clinic-entrance.jpg" alt="佐藤医院の外観">
+      <div class="hero-overlay"></div>
+      <div class="hero-copy wrap">
+        <p>地域に根ざした医療</p>
+        <h1>患者様に寄り添う<br>安心の医療</h1>
+      </div>
+    </section>
+
+    <section class="section hours-section" aria-labelledby="hours-title">
+      <div class="wrap narrow">
+        <div class="hours-layout">
+          <h2 id="hours-title" class="side-title">診療時間</h2>
+          <div class="hours-content">
+            <table class="hours-table">
+              <thead>
+                <tr>
+                  <th>診療時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th>9:00–12:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>●</td><td>／</td></tr>
+                <tr><th>13:00–18:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>／</td><td>／</td></tr>
+              </tbody>
+            </table>
+            <div class="hours-notes">
+              <p>受付時間：午前 8:30〜11:30　午後 12:30〜17:30</p>
+              <p>休診日：木曜・土曜午後・日曜・祝日</p>
+              <p>初診の方は受付終了の30分前までにお越しください。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-grid" aria-label="院内写真">
+          <img src="./assets/clinic/consultation-room.jpg" alt="明るい診察室">
+          <img src="./assets/clinic/hero-clinic.jpg" alt="中庭の緑">
+          <img src="./assets/clinic/waiting-room.jpg" alt="清潔な院内廊下">
+        </div>
+      </div>
+    </section>
+
+    <section class="section news-section" aria-labelledby="news-title">
+      <div class="wrap medium">
+        <h2 id="news-title" class="section-title">お知らせ</h2>
+        <div class="news-panel">
+          <img src="./assets/clinic/patient_10.jpg" alt="診察を受ける親子">
+          <div class="news-list">
+            <article><time datetime="2026-07-01">2026.07.01</time><p>夏季休診のお知らせ</p></article>
+            <article><time datetime="2026-06-15">2026.06.15</time><p>健康診断のご予約について</p></article>
+            <article><time datetime="2026-05-20">2026.05.20</time><p>予防接種の受付を開始しました</p></article>
+            <article><time datetime="2026-04-01">2026.04.01</time><p>診療時間変更のお知らせ</p></article>
+            <a class="button" href="#">過去のお知らせ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="director-section" aria-labelledby="director-title">
+      <div class="wrap medium director-layout">
+        <img src="./assets/director/director.jpg" alt="院長 佐藤健一">
+        <div>
+          <h2 id="director-title">院長挨拶</h2>
+          <p>佐藤医院は、地域の皆さまが安心して相談できる「かかりつけ医」を目指しています。体調の変化や日々の健康について、どんな小さなことでも気軽にお話しください。</p>
+          <p>丁寧な説明と一人ひとりに寄り添う診療を大切にし、必要に応じて専門医療機関とも連携しながら、皆さまの健やかな毎日を支えてまいります。</p>
+          <p class="signature">院長　佐藤 健一</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="medical" class="section medical-section" aria-labelledby="medical-title">
+      <div class="wrap medium">
+        <h2 id="medical-title" class="section-title">診療科</h2>
+        <div class="medical-grid">
+          <article class="medical-card">
+            <img src="./assets/dr/general-medicine.jpg" alt="一般内科の診察風景">
+            <div><h3>一般内科</h3><p>発熱、咳、頭痛、腹痛などの身近な症状から、体調に関する幅広いご相談を承ります。</p></div>
+          </article>
+          <article class="medical-card reverse">
+            <img src="./assets/dr/lifestyle-disease.jpg" alt="生活習慣病の診療風景">
+            <div><h3>生活習慣病の治療・管理</h3><p>高血圧、糖尿病、脂質異常症などを継続的に診療し、生活改善も丁寧に支援します。</p></div>
+          </article>
+          <article class="medical-card">
+            <img src="./assets/dr/suzuki_mari.jpg" alt="呼吸器内科の医師">
+            <div><h3>呼吸器内科</h3><p>長引く咳、息切れ、喘息など、呼吸器に関する症状を詳しく診察します。</p></div>
+          </article>
+          <article class="medical-card reverse">
+            <img src="./assets/dr/patient_11.jpg" alt="子どもの診察風景">
+            <div><h3>予防接種・健康診断</h3><p>各種予防接種、定期健診、雇用時健診などに対応しています。事前にご予約ください。</p></div>
+          </article>
+        </div>
+        <div class="button-row"><a class="button" href="#hours-bottom">他の診療科</a></div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section" aria-labelledby="about-title">
+      <div class="wrap medium">
+        <h2 id="about-title" class="section-title">当院について</h2>
+        <div class="about-intro">
+          <img src="./assets/clinic/hospital_6.jpg" alt="佐藤医院の院内">
+          <div><p>当院では、患者様一人ひとりの声に耳を傾け、分かりやすい説明と丁寧な診療を心がけています。</p><p>清潔で落ち着いた院内環境を整え、地域の皆さまがいつでも安心して頼れる医療を提供します。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="staff" class="section staff-section" aria-labelledby="staff-title">
+      <div class="wrap wide">
+        <h2 id="staff-title" class="section-title">スタッフ紹介</h2>
+        <div class="staff-list">
+          <article><img src="./assets/staff/firstView.jpg" alt="院長 佐藤健一"><div><h3>院長　佐藤健一</h3><p>患者様のお話を丁寧に伺い、安心して治療を受けていただけるよう努めています。</p></div></article>
+          <article><img src="./assets/staff/yamamoto_hana.jpg" alt="看護師 山本花"><div><h3>看護師　山本花</h3><p>不安な気持ちに寄り添い、明るく温かな対応を大切にしています。</p></div></article>
+          <article><img src="./assets/staff/medical-technologist.jpg" alt="臨床検査技師 小川直美"><div><h3>臨床検査技師　小川直美</h3><p>正確で迅速な検査を通じて、診断と治療を支えます。</p></div></article>
+          <article><img src="./assets/staff/information_4.jpg" alt="受付スタッフ 山本彩"><div><h3>受付　山本彩</h3><p>ご来院時に安心していただけるよう、分かりやすいご案内を心がけています。</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="section access-section" aria-labelledby="access-title">
+      <div class="wrap medium">
+        <h2 id="access-title" class="section-title left">アクセス</h2>
+        <div class="access-layout">
+          <img src="./assets/access/map.jpg" alt="佐藤医院周辺地図">
+          <div class="access-info">
+            <h3>佐藤医院</h3>
+            <p>〒000-0000<br>東京都〇〇区〇〇1-2-3</p>
+            <p><strong>TEL：</strong>03-0000-0000</p>
+            <p><strong>電車：</strong>〇〇駅より徒歩5分</p>
+            <p><strong>バス：</strong>「佐藤医院前」下車すぐ</p>
+            <p><strong>お車：</strong>専用駐車場5台</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hours-bottom" class="section hours-section bottom-hours" aria-labelledby="hours-title-bottom">
+      <div class="wrap narrow">
+        <div class="hours-layout">
+          <h2 id="hours-title-bottom" class="side-title">診療時間</h2>
+          <div class="hours-content">
+            <table class="hours-table">
+              <thead><tr><th>診療時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr></thead>
+              <tbody>
+                <tr><th>9:00–12:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>●</td><td>／</td></tr>
+                <tr><th>13:00–18:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>／</td><td>／</td></tr>
+              </tbody>
+            </table>
+            <div class="hours-notes"><p>受付時間：午前 8:30〜11:30　午後 12:30〜17:30</p><p>休診日：木曜・土曜午後・日曜・祝日</p><p>初診の方は受付終了の30分前までにお越しください。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinic-summary">
+      <div class="wrap medium">
+        <h2>診療時間</h2>
+        <p>内科</p><p>循環器科</p><p>呼吸器内科</p><p>予防接種・健康診断</p>
+        <p>生活習慣病（高血圧・糖尿病等）の治療・管理</p>
+        <p class="contact-note">そのほかご不明な点があれば電話またはメールでお問い合わせください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><small>© 2026 Sato Clinic</small></footer>
+</body>
+</html>
