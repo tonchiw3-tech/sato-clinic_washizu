@@ -109,32 +109,6 @@ section{scroll-margin-top:92px}
   max-width:624px;
   color:#fff;
   padding-left:clamp(24px,4vw,64px);
-<<<<<<< HEAD
-  padding-top:clamp(88px,10vw,118px);
-}
-.hero-copy p,
-.hero-copy h1{
-  font-family:'Noto Sans JP',system-ui,sans-serif;
-  color:#fff;
-  text-align:left;
-  -webkit-text-stroke:1px #000;
-  text-shadow:0 1px 2px rgba(0,0,0,.18);
-}
-.hero-copy p{
-  margin:0 0 8px;
-  font-size:48px;
-  font-weight:700;
-  line-height:1.16;
-  letter-spacing:0;
-}
-.hero-copy h1{
-  margin:0;
-  font-size:48px;
-  line-height:1.16;
-  font-weight:700;
-  letter-spacing:0;
-  max-width:624px;
-=======
   padding-top:clamp(92px,10vw,120px);
 }
 .hero-copy p,
@@ -154,7 +128,6 @@ section{scroll-margin-top:92px}
 }
 .hero-copy h1{
   margin:0;
->>>>>>> fix-medical-hours
 }
 
 .section{padding:104px 0}
@@ -184,7 +157,7 @@ section{scroll-margin-top:92px}
 .top-hours .hours-layout{
   display:flex;
   flex-direction:column;
-  gap:24px;
+  gap:32px;
 }
 .top-hours .side-title{
   writing-mode:horizontal-tb;
@@ -192,25 +165,26 @@ section{scroll-margin-top:92px}
   font-size:clamp(28px,3vw,36px);
   line-height:1.2;
   padding-top:0;
+  margin-bottom:4px;
 }
 .top-hours .hours-content{
   background:#fff;
   border:0;
   border-radius:0;
-  padding:0;
+  padding:8px 0 0;
   box-shadow:none;
 }
 .hours-layout{
   display:grid;
-  grid-template-columns:72px minmax(0,1fr);
-  gap:32px;
+  grid-template-columns:88px minmax(0,1fr);
+  gap:40px;
   align-items:start;
 }
 .hours-content{
   background:rgba(255,255,255,.76);
   border:1px solid var(--line);
   border-radius:24px;
-  padding:28px;
+  padding:32px 36px;
   box-shadow:var(--shadow);
 }
 .hours-table{
@@ -222,7 +196,7 @@ section{scroll-margin-top:92px}
 }
 .hours-table th,
 .hours-table td{
-  padding:14px 10px;
+  padding:16px 12px;
   text-align:center;
   border-bottom:1px solid var(--line);
   color:#000;
