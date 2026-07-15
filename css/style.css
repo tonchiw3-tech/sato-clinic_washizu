@@ -324,14 +324,14 @@ section{scroll-margin-top:92px}
 }
 
 .medical-section{padding-bottom:80px}
-.medical-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:30px 34px;
-  width:fit-content;
-  max-width:100%;
-  margin-inline:auto;
-  justify-content:center;
+.medical-grid,
+.medical-list{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  margin:48px auto 80px;
+  text-align:center;
 }
 .medical-card{
   display:grid;
@@ -345,6 +345,8 @@ section{scroll-margin-top:92px}
   padding:18px;
   box-shadow:var(--shadow);
   text-align:center;
+  width:100%;
+  max-width:760px;
 }
 .medical-card.reverse{
   grid-template-columns:minmax(0,1fr) 220px;
@@ -360,13 +362,17 @@ section{scroll-margin-top:92px}
   margin:4px 0 12px;
   font-size:20px;
 }
-.medical-card p{
+.medical-card p,
+.medical-list p{
   margin:0;
   font-size:14px;
   color:var(--muted);
 }
 .medical-card > div{
   width:100%;
+}
+.medical-list p{
+  margin:0;
 }
 .button-row{
   margin-top:34px;
