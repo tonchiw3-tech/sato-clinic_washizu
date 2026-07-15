@@ -385,6 +385,14 @@ section{scroll-margin-top:92px}
 }
 
 .staff-section{padding-top:80px}
+.staff-intro{
+  max-width:700px;
+  margin:0 auto 28px;
+  text-align:center;
+  line-height:1.9;
+  color:var(--muted);
+  font-size:15px;
+}
 .staff-list{
   display:grid;
   gap:18px;
