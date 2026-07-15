@@ -130,7 +130,7 @@ section{scroll-margin-top:92px}
   margin:0;
 }
 
-.section{padding:104px 0}
+.section{padding:80px 0}
 .section-title{
   margin:0 0 44px;
   font-size:clamp(28px,3vw,36px);
@@ -149,10 +149,10 @@ section{scroll-margin-top:92px}
   padding-top:6px;
 }
 
-.hours-section{padding-top:92px}
+.hours-section{padding-top:80px}
 .top-hours{
   background:#fff;
-  padding:0 0 96px;
+  padding:80px 0;
 }
 .top-hours .hours-layout{
   display:flex;
@@ -237,7 +237,7 @@ section{scroll-margin-top:92px}
   box-shadow:var(--shadow);
 }
 
-.news-section{padding-top:88px}
+.news-section{padding-top:80px}
 .news-panel{
   display:grid;
   grid-template-columns:minmax(320px,430px) minmax(0,1fr);
@@ -292,7 +292,7 @@ section{scroll-margin-top:92px}
 
 .director-section{
   background:linear-gradient(180deg,#dff3ed 0%, #edf8f5 100%);
-  padding:88px 0;
+  padding:80px 0;
 }
 .director-layout{
   display:grid;
@@ -323,7 +323,7 @@ section{scroll-margin-top:92px}
   font-weight:700;
 }
 
-.medical-section{padding-bottom:84px}
+.medical-section{padding-bottom:80px}
 .medical-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -364,7 +364,7 @@ section{scroll-margin-top:92px}
   text-align:right;
 }
 
-.about-section{padding-top:68px}
+.about-section{padding-top:80px}
 .about-intro{
   display:grid;
   grid-template-columns:minmax(320px,460px) minmax(0,1fr);
@@ -384,7 +384,7 @@ section{scroll-margin-top:92px}
   color:var(--muted);
 }
 
-.staff-section{padding-top:74px}
+.staff-section{padding-top:80px}
 .staff-list{
   display:grid;
   gap:18px;
@@ -416,7 +416,7 @@ section{scroll-margin-top:92px}
   color:var(--muted);
 }
 
-.access-section{padding-top:84px}
+.access-section{padding-top:80px}
 .access-layout{
   display:grid;
   grid-template-columns:minmax(360px,620px) minmax(0,1fr);
@@ -448,7 +448,7 @@ section{scroll-margin-top:92px}
   min-width:5.5em;
 }
 
-.bottom-hours{padding-top:68px;padding-bottom:92px}
+.bottom-hours{padding-top:80px;padding-bottom:80px}
 
 .clinic-summary{
   background:#f1f7f5;
