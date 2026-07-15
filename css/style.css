@@ -427,9 +427,11 @@ section{scroll-margin-top:92px}
 .access-section{padding-top:80px}
 .access-layout{
   display:grid;
-  grid-template-columns:minmax(360px,620px) minmax(0,1fr);
-  gap:42px;
-  align-items:start;
+  grid-template-columns:minmax(0,55%) minmax(0,45%);
+  gap:40px;
+  align-items:center;
+  max-width:1080px;
+  margin-inline:auto;
 }
 .access-layout > img{
   width:100%;
@@ -440,6 +442,7 @@ section{scroll-margin-top:92px}
 }
 .access-info{
   padding-top:14px;
+  line-height:1.85;
 }
 .access-info h3{
   margin:0 0 18px;
