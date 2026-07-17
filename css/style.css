@@ -489,6 +489,7 @@ a {
   margin: 0;
   font-size: 14px;
   color: var(--muted);
+  text-align: left;
 }
 
 .medical-card>div {
