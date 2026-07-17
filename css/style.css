@@ -187,6 +187,12 @@ section{scroll-margin-top:92px}
   padding:32px 36px;
   box-shadow:var(--shadow);
 }
+.access-hours{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
 .hours-table{
   width:100%;
   border-collapse:collapse;
