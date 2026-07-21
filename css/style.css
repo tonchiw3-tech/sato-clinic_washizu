@@ -849,8 +849,13 @@ body.faq-page .button-row {
   margin-inline: auto;
 }
 
+.access-layout > * {
+  min-width: 0;
+}
+
 .access-map {
   width: 100%;
+  max-width: 100%;
   height: clamp(220px, 33vw, 380px);
   overflow: hidden;
   border-radius: 28px;
@@ -863,6 +868,7 @@ body.faq-page .button-row {
 
 .access-map iframe {
   width: 100%;
+  max-width: 100%;
   height: 100%;
   border: 0;
   display: block;
@@ -1298,7 +1304,16 @@ body.faq-page .button-row {
   }
 
   .access-map {
-    height: clamp(280px, 72vw, 320px);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    height: 280px;
+  }
+
+  .access-map iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
   }
 
   .director-layout h2 {
