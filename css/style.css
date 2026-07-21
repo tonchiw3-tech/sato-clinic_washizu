@@ -356,6 +356,10 @@ a {
   transition: transform .35s ease;
 }
 
+.gallery-track {
+  display: contents;
+}
+
 .gallery-grid img {
   width: 100%;
   height: 260px;
@@ -849,25 +853,32 @@ a {
   }
 
   .gallery-grid {
+    display: block;
     gap: 0;
+    overflow: hidden;
   }
 
   .gallery-carousel {
-    display: flex;
     width: 100%;
     overflow: hidden;
     touch-action: pan-y;
-    will-change: transform;
   }
 
-  .gallery-carousel img {
+  .gallery-track {
+    display: flex;
+    width: 100%;
+    will-change: transform;
+    transition: transform .35s ease;
+  }
+
+  .gallery-track.is-dragging {
+    transition: none;
+  }
+
+  .gallery-track > img {
     flex: 0 0 100%;
     width: 100%;
     height: 220px;
-  }
-
-  .gallery-carousel.is-dragging {
-    transition: none;
   }
 
   .gallery-grid img {
