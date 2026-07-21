@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const targets = Array.from(document.querySelectorAll('.reveal-section'));
   const header = document.querySelector('.site-header');
   const menuToggle = document.querySelector('.menu-toggle');
-  const globalNav = document.querySelector('#global-nav');
+  const globalNav = document.querySelector('.global-nav');
   const galleryCarousel = document.querySelector('[data-carousel="clinic-gallery"]');
   const galleryTrack = galleryCarousel?.querySelector('.gallery-track');
 
