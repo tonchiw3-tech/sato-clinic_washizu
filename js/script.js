@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
   const menuToggle = document.querySelector('.menu-toggle');
   const globalNav = document.querySelector('#global-nav');
+  const galleryCarousel = document.querySelector('[data-carousel="clinic-gallery"]');
 
   if (header && menuToggle && globalNav) {
     const mobileQuery = window.matchMedia('(max-width: 768px)');
@@ -42,6 +43,137 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenu();
       }
     });
+  }
+
+  if (galleryCarousel) {
+    const slides = Array.from(galleryCarousel.querySelectorAll('img'));
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    const dots = document.createElement('div');
+    dots.className = 'carousel-dots';
+    dots.setAttribute('aria-label', '\u9662\u5185\u306e\u5199\u771f\u3092\u5207\u308a\u66ff\u3048\u308b');
+
+    let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let deltaX = 0;
+    let activePointerId = null;
+
+    const clampIndex = (value) => Math.max(0, Math.min(slides.length - 1, value));
+
+    const updateDots = () => {
+      dotButtons.forEach((button, index) => {
+        button.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
+      });
+    };
+
+    const render = (animate = true) => {
+      if (!mobileQuery.matches) {
+        galleryCarousel.classList.remove('is-dragging');
+        galleryCarousel.style.transform = '';
+        galleryCarousel.style.transition = '';
+        return;
+      }
+
+      galleryCarousel.classList.add('is-carousel-active');
+      galleryCarousel.classList.toggle('is-dragging', isDragging);
+      galleryCarousel.style.transition = animate ? '' : 'none';
+      galleryCarousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      updateDots();
+    };
+
+    const setIndex = (value, animate = true) => {
+      currentIndex = clampIndex(value);
+      deltaX = 0;
+      render(animate);
+    };
+
+    const dotButtons = slides.map((_, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('aria-label', `${index + 1}\u679a\u76ee\u306e\u5199\u771f\u3092\u8868\u793a`);
+      button.addEventListener('click', () => {
+        setIndex(index);
+      });
+      dots.appendChild(button);
+      return button;
+    });
+
+    galleryCarousel.insertAdjacentElement('afterend', dots);
+
+    const enableCarousel = () => {
+      dots.hidden = false;
+      setIndex(currentIndex, false);
+    };
+
+    const disableCarousel = () => {
+      isDragging = false;
+      activePointerId = null;
+      deltaX = 0;
+      galleryCarousel.classList.remove('is-carousel-active', 'is-dragging');
+      galleryCarousel.style.transform = '';
+      galleryCarousel.style.transition = '';
+      dots.hidden = true;
+      updateDots();
+    };
+
+    galleryCarousel.addEventListener('pointerdown', (event) => {
+      if (!mobileQuery.matches || event.pointerType === 'mouse') {
+        return;
+      }
+
+      isDragging = true;
+      startX = event.clientX;
+      deltaX = 0;
+      activePointerId = event.pointerId;
+      galleryCarousel.setPointerCapture(event.pointerId);
+      render(false);
+    });
+
+    galleryCarousel.addEventListener('pointermove', (event) => {
+      if (!isDragging || event.pointerId !== activePointerId || !mobileQuery.matches) {
+        return;
+      }
+
+      deltaX = event.clientX - startX;
+      galleryCarousel.style.transform = `translateX(calc(-${currentIndex * 100}% + ${deltaX}px))`;
+    });
+
+    const finishDrag = (event) => {
+      if (!isDragging || event.pointerId !== activePointerId) {
+        return;
+      }
+
+      const threshold = 50;
+      if (deltaX < -threshold) {
+        setIndex(currentIndex + 1);
+      } else if (deltaX > threshold) {
+        setIndex(currentIndex - 1);
+      } else {
+        setIndex(currentIndex);
+      }
+
+      isDragging = false;
+      activePointerId = null;
+      deltaX = 0;
+      galleryCarousel.classList.remove('is-dragging');
+    };
+
+    galleryCarousel.addEventListener('pointerup', finishDrag);
+    galleryCarousel.addEventListener('pointercancel', finishDrag);
+
+    mobileQuery.addEventListener('change', () => {
+      if (mobileQuery.matches) {
+        enableCarousel();
+      } else {
+        disableCarousel();
+      }
+    });
+
+    if (mobileQuery.matches) {
+      enableCarousel();
+    } else {
+      disableCarousel();
+    }
   }
 
   if (targets.length) {

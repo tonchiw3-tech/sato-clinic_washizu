@@ -352,12 +352,20 @@ a {
   margin-top: 44px;
 }
 
+.gallery-carousel {
+  transition: transform .35s ease;
+}
+
 .gallery-grid img {
   width: 100%;
   height: 260px;
   object-fit: cover;
   border-radius: 22px;
   box-shadow: var(--shadow);
+}
+
+.carousel-dots {
+  display: none;
 }
 
 .news-section {
@@ -841,11 +849,59 @@ a {
   }
 
   .gallery-grid {
-    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .gallery-carousel {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+    will-change: transform;
+  }
+
+  .gallery-carousel img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 220px;
+  }
+
+  .gallery-carousel.is-dragging {
+    transition: none;
   }
 
   .gallery-grid img {
     height: 220px;
+  }
+
+  .carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .carousel-dots button {
+    appearance: none;
+    border: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(31, 143, 122, .26);
+    padding: 0;
+    cursor: pointer;
+    transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
+  }
+
+  .carousel-dots button[aria-current="true"] {
+    background: var(--green);
+    transform: scale(1.25);
+  }
+
+  .carousel-dots button:focus-visible {
+    outline: 2px solid var(--green-deep);
+    outline-offset: 4px;
   }
 
   .medical-card,
