@@ -611,6 +611,85 @@ article[id] {
   color: var(--muted);
 }
 
+body.about-page .about-text {
+  max-width: 940px;
+  margin: 0 auto;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+body.about-page .about-list {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-left: 1.35em;
+  color: var(--muted);
+  display: grid;
+  gap: 10px;
+  line-height: 1.9;
+}
+
+body.about-page .table-scroll {
+  margin-top: 20px;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: var(--shadow);
+}
+
+body.about-page .policy-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+  color: var(--text);
+}
+
+body.about-page .policy-table th,
+body.about-page .policy-table td {
+  padding: 14px 16px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+  word-break: break-word;
+}
+
+body.about-page .policy-table th:last-child,
+body.about-page .policy-table td:last-child {
+  border-right: 0;
+}
+
+body.about-page .policy-table thead th {
+  background: #dff3ed;
+  font-weight: 700;
+}
+
+body.about-page .policy-table thead th:nth-child(1) {
+  width: 90px;
+  text-align: center;
+}
+
+body.about-page .policy-table thead th:nth-child(2) {
+  width: 250px;
+}
+
+body.about-page .policy-table tbody th {
+  width: 90px;
+  text-align: center;
+  background: #edf8f5;
+  font-weight: 700;
+}
+
+body.about-page .policy-table tbody tr:last-child th,
+body.about-page .policy-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .staff-section {
   padding-top: 80px
 }
@@ -877,6 +956,25 @@ article[id] {
     padding: 22px;
   }
 
+  body.about-page .about-text,
+  body.about-page .about-list {
+    font-size: 14px;
+  }
+
+  body.about-page .table-scroll {
+    margin-top: 18px;
+  }
+
+  body.about-page .policy-table {
+    min-width: 720px;
+    font-size: 13px;
+  }
+
+  body.about-page .policy-table th,
+  body.about-page .policy-table td {
+    padding: 12px 14px;
+  }
+
   .top-hours .hours-layout {
     gap: 20px;
   }
@@ -1136,6 +1234,27 @@ article[id] {
   .news-links a {
     padding: 12px 0;
     font-size: 14px;
+  }
+
+  body.about-page .about-text,
+  body.about-page .about-list {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  body.about-page .table-scroll {
+    margin-top: 16px;
+    border-radius: 18px;
+  }
+
+  body.about-page .policy-table {
+    min-width: 680px;
+    font-size: 13px;
+  }
+
+  body.about-page .policy-table th,
+  body.about-page .policy-table td {
+    padding: 10px 12px;
   }
 
   .news-list time {
