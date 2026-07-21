@@ -8,7 +8,7 @@
   --muted: #5f706c;
   --line: #d6e2de;
   --shadow: 0 18px 50px rgba(20, 49, 45, .08);
-  --anchor-offset: 80px
+  --anchor-offset: 100px;
 }
 
 * {
@@ -41,6 +41,7 @@ a {
   text-decoration: none
 }
 
+#top,
 #medical,
 #about,
 #staff,
@@ -708,6 +709,9 @@ a {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --anchor-offset: 70px;
+  }
 
   .header-inner,
   .wrap,
