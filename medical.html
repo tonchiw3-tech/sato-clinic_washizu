@@ -15,11 +15,16 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#top" aria-label="佐藤内科クリニック トップへ">
+      <a class="brand" href="./index.html" aria-label="佐藤内科クリニック トップへ">
         <img src="./assets/Logo/logo.png" alt="佐藤内科クリニック">
       </a>
-      <nav class="global-nav" aria-label="メインナビゲーション">
-        <a href="#top">トップ</a>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="global-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="global-nav" class="global-nav" aria-label="メインナビゲーション">
+        <a href="./index.html">トップ</a>
         <a href="./index.html#medical">診療案内</a>
         <a href="./index.html#about">当院について</a>
         <a href="./index.html#staff">スタッフ紹介</a>
