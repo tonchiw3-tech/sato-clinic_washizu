@@ -186,6 +186,18 @@ a {
   padding: 80px 0
 }
 
+.reveal-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section-title {
   margin: 0 0 44px;
   font-size: clamp(28px, 3vw, 36px);
@@ -641,6 +653,19 @@ a {
   color: #fff;
   font-size: 12px;
   letter-spacing: .08em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto
+  }
+
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
 }
 
 @media (max-width: 960px) {
