@@ -738,6 +738,19 @@ body.about-page .policy-table tbody tr:last-child td {
   color: var(--muted);
 }
 
+.faq-section {
+  padding-top: 80px;
+}
+
+.faq-intro {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
 .access-section {
   padding-top: 80px
 }
@@ -1157,6 +1170,7 @@ body.about-page .policy-table tbody tr:last-child td {
   .director-section,
   .about-section,
   .staff-section,
+  .faq-section,
   .access-section,
   .bottom-hours {
     padding-top: 64px
@@ -1194,6 +1208,7 @@ body.about-page .policy-table tbody tr:last-child td {
   .director-layout p,
   .about-intro p,
   .staff-intro,
+  .faq-intro,
   .staff-list p,
   .medical-card p,
   .medical-list p,
