@@ -23,6 +23,7 @@ body {
   margin: 0;
   font-family: 'Noto Sans JP', system-ui, sans-serif;
   color: var(--text);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(31, 143, 122, .08), transparent 32%),
     linear-gradient(180deg, #fff 0%, #fbfefd 50%, #f6fbfa 100%);
@@ -31,7 +32,8 @@ body {
 
 img {
   display: block;
-  max-width: 100%
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -87,6 +89,31 @@ a {
   width: 176px
 }
 
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
 .global-nav {
   display: flex;
   flex-wrap: wrap;
@@ -133,7 +160,7 @@ a {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .hero-overlay {
@@ -668,7 +695,7 @@ a {
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
 
   .header-inner,
   .wrap,
@@ -684,24 +711,106 @@ a {
 
   .header-inner {
     padding: 10px 0;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
   }
 
   .brand img {
     width: 170px
   }
 
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .site-header.is-nav-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-header.is-nav-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.is-nav-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
   .global-nav {
+    display: flex;
+    width: 100%;
+    flex-basis: 100%;
+    order: 3;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
-    gap: 16px;
-    font-size: 12px
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: max-height .28s ease, opacity .22s ease, transform .22s ease;
+  }
+
+  .site-header.is-nav-open .global-nav {
+    max-height: 320px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    padding-top: 8px;
+  }
+
+  .global-nav a {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 13px;
+    border-top: 1px solid rgba(214, 226, 222, .8);
+  }
+
+  .global-nav a::after {
+    bottom: 9px
   }
 
   .hero,
   .hero>img {
-    height: 520px;
-    min-height: 520px
+    height: 420px;
+    min-height: 420px
+  }
+
+  .hero>img {
+    object-fit: cover;
+    object-position: center 35%
+  }
+
+  .hero-copy {
+    width: calc(100% - 32px);
+    max-width: 22rem;
+    padding-left: 0;
+    padding-top: 68px;
+  }
+
+  .hero-copy p {
+    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(32px, 5.2vw, 40px);
+    line-height: 1.15;
+  }
+
+  .section {
+    padding: 72px 0
+  }
+
+  .section-title {
+    margin-bottom: 32px
   }
 
   .hours-layout,
@@ -773,40 +882,6 @@ a {
   .news-list .button {
     display: flex
   }
-}
-
-@media (max-width: 640px) {
-
-  .hero,
-  .hero>img {
-    height: 480px;
-    min-height: 480px
-  }
-
-  .hero>img {
-    object-position: center 35%
-  }
-
-  .hero-copy {
-    width: calc(100% - 32px);
-    max-width: 624px;
-    padding-left: 16px;
-    padding-top: 72px;
-  }
-
-  .hero-copy p,
-  .hero-copy h1 {
-    font-size: clamp(30px, 9vw, 48px);
-    line-height: 1.16;
-  }
-
-  .section {
-    padding: 80px 0
-  }
-
-  .section-title {
-    margin-bottom: 32px
-  }
 
   .hours-table {
     font-size: 13px;
@@ -824,5 +899,156 @@ a {
   .news-list article {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header-inner,
+  .wrap,
+  .wrap.narrow,
+  .wrap.medium,
+  .wrap.wide {
+    width: min(100% - 32px, 1000px);
+  }
+
+  .brand img {
+    width: 156px
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .global-nav a {
+    font-size: 12px;
+    padding: 11px 0;
+  }
+
+  .hero,
+  .hero>img {
+    height: 340px;
+    min-height: 340px
+  }
+
+  .hero-copy {
+    width: calc(100% - 32px);
+    max-width: none;
+    padding-top: 52px;
+  }
+
+  .hero-copy p {
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 1.15;
+  }
+
+  .hero-copy h1 {
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  .section {
+    padding: 64px 0
+  }
+
+  .section-title {
+    margin-bottom: 24px;
+    letter-spacing: .06em;
+  }
+
+  .hours-section,
+  .news-section,
+  .director-section,
+  .about-section,
+  .staff-section,
+  .access-section,
+  .bottom-hours {
+    padding-top: 64px
+  }
+
+  .top-hours {
+    padding: 64px 0
+  }
+
+  .hours-content,
+  .news-list {
+    padding: 18px 16px;
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+
+  .director-layout>img,
+  .about-intro img,
+  .access-layout>img,
+  .medical-card img,
+  .staff-list img {
+    height: 200px;
+  }
+
+  .director-layout h2 {
+    margin-bottom: 18px;
+  }
+
+  .director-layout p,
+  .about-intro p,
+  .staff-intro,
+  .staff-list p,
+  .medical-card p,
+  .medical-list p,
+  .access-info p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .access-info h3 {
+    font-size: 20px;
+  }
+
+  .access-info strong {
+    min-width: 4.6em;
+  }
+
+  .hours-table {
+    font-size: 12px;
+  }
+
+  .hours-table th,
+  .hours-table td {
+    padding: 8px 4px;
+  }
+
+  .top-hours .hours-table tbody th {
+    width: 92px;
+  }
+
+  .hours-notes {
+    font-size: 12px;
+  }
+
+  .news-list article {
+    padding: 12px 0;
+  }
+
+  .news-list time {
+    font-size: 13px;
+  }
+
+  .news-list p {
+    font-size: 14px;
+  }
+
+  .button {
+    min-width: 0;
+    max-width: 220px;
+    width: 100%;
+    padding: 12px 18px;
+  }
+
+  .news-list .button {
+    max-width: none;
   }
 }
