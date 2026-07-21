@@ -751,6 +751,91 @@ body.about-page .policy-table tbody tr:last-child td {
   line-height: 1.9;
 }
 
+body.faq-page {
+  overflow-x: hidden;
+}
+
+body.faq-page .faq-page-lead,
+body.faq-page .faq-closing {
+  max-width: 920px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+body.faq-page .faq-page-lead {
+  text-align: center;
+}
+
+body.faq-page .faq-category {
+  margin-top: 28px;
+  padding: 28px 30px;
+  background: rgba(255, 255, 255, .84);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+}
+
+body.faq-page .faq-category h2 {
+  margin: 0 0 20px;
+  color: var(--green-deep);
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+body.faq-page .faq-item {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+body.faq-page .faq-item:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+body.faq-page .faq-question,
+body.faq-page .faq-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+}
+
+body.faq-page .faq-question {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+body.faq-page .faq-answer {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+body.faq-page .faq-mark {
+  flex: 0 0 auto;
+  min-width: 1.8em;
+  color: var(--green-deep);
+  font-weight: 800;
+}
+
+body.faq-page .faq-answer .faq-mark {
+  color: var(--green);
+}
+
+body.faq-page .faq-closing {
+  margin-top: 40px;
+}
+
+body.faq-page .button-row {
+  margin-top: 28px;
+}
+
 .access-section {
   padding-top: 80px
 }
@@ -1209,6 +1294,8 @@ body.about-page .policy-table tbody tr:last-child td {
   .about-intro p,
   .staff-intro,
   .faq-intro,
+  body.faq-page .faq-page-lead,
+  body.faq-page .faq-closing,
   .staff-list p,
   .medical-card p,
   .medical-list p,
@@ -1232,6 +1319,31 @@ body.about-page .policy-table tbody tr:last-child td {
   .hours-table th,
   .hours-table td {
     padding: 8px 4px;
+  }
+
+  body.faq-page .faq-category {
+    padding: 20px 16px;
+    border-radius: 22px;
+  }
+
+  body.faq-page .faq-category h2 {
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
+
+  body.faq-page .faq-item {
+    padding: 16px 0;
+  }
+
+  body.faq-page .faq-question {
+    font-size: 16px;
+  }
+
+  body.faq-page .faq-answer,
+  body.faq-page .faq-page-lead,
+  body.faq-page .faq-closing {
+    font-size: 13px;
+    line-height: 1.8;
   }
 
   .top-hours .hours-table tbody th {
