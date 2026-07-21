@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let startX = 0;
     let deltaX = 0;
     let activePointerId = null;
+    let activeTouchId = null;
 
     const clampIndex = (value) => Math.max(0, Math.min(slides.length - 1, value));
 
@@ -139,9 +140,43 @@ document.addEventListener('DOMContentLoaded', () => {
       galleryTrack.style.transform = `translateX(calc(-${currentIndex * 100}% + ${deltaX}px))`;
     });
 
-    const finishDrag = (event) => {
-      if (!isDragging || event.pointerId !== activePointerId) {
+    galleryCarousel.addEventListener('touchstart', (event) => {
+      if (!mobileQuery.matches || event.touches.length !== 1) {
         return;
+      }
+
+      const touch = event.touches[0];
+      isDragging = true;
+      startX = touch.clientX;
+      deltaX = 0;
+      activeTouchId = touch.identifier;
+      render(false);
+    }, { passive: true });
+
+    galleryCarousel.addEventListener('touchmove', (event) => {
+      if (!isDragging || !mobileQuery.matches || event.touches.length !== 1) {
+        return;
+      }
+
+      const touch = event.touches[0];
+      if (touch.identifier !== activeTouchId) {
+        return;
+      }
+
+      event.preventDefault();
+      deltaX = touch.clientX - startX;
+      galleryTrack.style.transform = `translateX(calc(-${currentIndex * 100}% + ${deltaX}px))`;
+    }, { passive: false });
+
+    const finishDrag = (event) => {
+      if (!isDragging) {
+        return;
+      }
+
+      if (event.type === 'pointerup' || event.type === 'pointercancel') {
+        if (event.pointerId !== activePointerId) {
+          return;
+        }
       }
 
       const threshold = 50;
@@ -155,12 +190,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       isDragging = false;
       activePointerId = null;
+      activeTouchId = null;
       deltaX = 0;
       galleryTrack.classList.remove('is-dragging');
     };
 
     galleryCarousel.addEventListener('pointerup', finishDrag);
     galleryCarousel.addEventListener('pointercancel', finishDrag);
+    galleryCarousel.addEventListener('touchend', finishDrag);
+    galleryCarousel.addEventListener('touchcancel', finishDrag);
 
     mobileQuery.addEventListener('change', () => {
       if (mobileQuery.matches) {
