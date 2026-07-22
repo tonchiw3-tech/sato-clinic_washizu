@@ -16,7 +16,8 @@
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--anchor-offset);
 }
 
 body {
@@ -1041,7 +1042,7 @@ body.faq-page .button-row {
 
 @media (max-width: 768px) {
   :root {
-    --anchor-offset: 96px;
+    --anchor-offset: 80px;
   }
 
   .header-inner,
