@@ -1058,6 +1058,30 @@ body.faq-page .button-row {
     grid-template-columns: 1fr;
   }
 
+  .access-section .wrap.medium {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  .access-section .wrap.medium > .access-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .access-section .access-map,
+  .access-section .access-info {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
   .side-title {
     writing-mode: horizontal-tb;
     padding-top: 0;
