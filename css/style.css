@@ -299,8 +299,15 @@ article[id] {
   box-shadow: none;
 }
 
+.timetable-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .hours-table {
   width: 100%;
+  min-width: 620px;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 15px;
@@ -313,6 +320,8 @@ article[id] {
   text-align: center;
   border-bottom: 1px solid var(--line);
   color: #000;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .top-hours .hours-table thead th {
@@ -320,10 +329,10 @@ article[id] {
   font-weight: 700;
 }
 
+.top-hours .hours-table thead th:first-child,
 .top-hours .hours-table tbody th {
   background: #edf1ee;
-  width: 160px;
-  text-align: left;
+  width: 150px;
   font-weight: 700;
 }
 
@@ -1216,6 +1225,10 @@ body.faq-page .button-row {
     padding: 0;
   }
 
+  .timetable-scroll {
+    overflow-x: auto;
+  }
+
   .gallery-grid {
     display: block;
     gap: 0;
@@ -1329,12 +1342,12 @@ body.faq-page .button-row {
   }
 
   .top-hours .hours-table tbody th {
-    width: 120px;
+    width: 150px;
   }
 
   .hours-table th,
   .hours-table td {
-    padding: 11px 6px;
+    padding: 11px 8px;
   }
 
   .news-list article {
@@ -1479,12 +1492,13 @@ body.faq-page .button-row {
   }
 
   .hours-table {
-    font-size: 12px;
+    min-width: 560px;
+    font-size: 14px;
   }
 
   .hours-table th,
   .hours-table td {
-    padding: 8px 4px;
+    padding: 10px 8px;
   }
 
   body.faq-page .faq-category {
@@ -1513,7 +1527,7 @@ body.faq-page .button-row {
   }
 
   .top-hours .hours-table tbody th {
-    width: 92px;
+    width: 140px;
   }
 
   .hours-notes {
