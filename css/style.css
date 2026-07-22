@@ -1229,10 +1229,6 @@ body.faq-page .button-row {
     padding: 0;
   }
 
-  .timetable-scroll {
-    overflow-x: auto;
-  }
-
   .gallery-grid {
     display: block;
     gap: 0;
@@ -1339,19 +1335,6 @@ body.faq-page .button-row {
 
   .news-list .button {
     display: flex
-  }
-
-  .hours-table {
-    font-size: 13px;
-  }
-
-  .top-hours .hours-table tbody th {
-    width: 150px;
-  }
-
-  .hours-table th,
-  .hours-table td {
-    padding: 11px 8px;
   }
 
   .news-list article {
