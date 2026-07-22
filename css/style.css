@@ -577,6 +577,29 @@ article[id] {
   width: 100%;
 }
 
+.medical-card.text-only {
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  text-align: left;
+}
+
+.medical-card.text-only img {
+  display: none;
+}
+
+.medical-card.text-only h3 {
+  text-align: left;
+}
+
+.medical-page-lead {
+  max-width: 920px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: center;
+}
+
 .medical-list p {
   margin: 0;
 }
