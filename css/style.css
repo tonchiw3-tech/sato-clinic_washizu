@@ -1041,7 +1041,7 @@ body.faq-page .button-row {
 
 @media (max-width: 768px) {
   :root {
-    --anchor-offset: 8px;
+    --anchor-offset: 96px;
   }
 
   .header-inner,
@@ -1481,7 +1481,7 @@ body.faq-page .button-row {
   .timetable-scroll {
     width: 100%;
     max-width: 100%;
-    overflow: visible;
+    overflow-x: hidden;
   }
 
   .hours-table {
@@ -1495,7 +1495,7 @@ body.faq-page .button-row {
 
   .hours-table th,
   .hours-table td {
-    padding: 6px 2px;
+    padding: 6px 1px;
     text-align: center;
     vertical-align: middle;
     box-sizing: border-box;
@@ -1509,7 +1509,7 @@ body.faq-page .button-row {
 
   .hours-table thead th:first-child,
   .hours-table tbody th {
-    width: 34%;
+    width: 33.5%;
     font-size: 12px;
     line-height: 1.35;
     white-space: normal;
@@ -1518,7 +1518,7 @@ body.faq-page .button-row {
 
   .hours-table th:not(:first-child),
   .hours-table td:not(:first-child) {
-    width: 9.4286%;
+    width: calc((100% - 33.5%) / 7);
   }
 
   .top-hours .hours-table tbody td {
