@@ -959,6 +959,8 @@ body.faq-page .button-row {
 .footer-hours,
 .footer-nav {
   min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .footer-name {
@@ -986,6 +988,8 @@ body.faq-page .button-row {
 
 .footer-hours p {
   margin: 0 0 10px;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .footer-hours p:last-child {
@@ -1617,6 +1621,8 @@ body.faq-page .button-row {
   .site-footer a {
     font-size: 13px;
     line-height: 1.75;
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   .footer-name {
